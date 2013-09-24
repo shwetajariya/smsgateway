@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	
+	<!--
+		We declare a new template named template-main.
+		This template is used for displaying the main page.
+		It has 4 attributes. These attributes are placeholder for our contents
+		For each attribute, we have assigned a corresponding JSP
+	-->
+	<definition name="template-main" template="/WEB-INF/views/layouts/mainLayout.jsp">
+		<put-attribute name="banner-content" value="/WEB-INF/views/sections/banner.jsp" />
+		<put-attribute name="title-content" value="SMS" />
+		<put-attribute name="primary-content" value="" />
+		<put-attribute name="menu-content" value="/WEB-INF/views/sections/menu.jsp"/>
+		<put-attribute name="footer-content" value="/WEB-INF/views/sections/footer.jsp" />
+	</definition>
+	
+    <!-- Concrete page.-->
+	<definition name="employee" extends="template-main">
+		<put-attribute name="primary-content" value="/WEB-INF/views/employee.jsp" />
+	</definition>
+	
+	<definition name="company_detail" extends="template-main">
+		<put-attribute name="primary-content" value="/WEB-INF/jsps/company_detail.jsp" />
+	</definition>
+	
+	
+		
+	<definition name="user" extends="template-main">
+		<put-attribute name="primary-content" value="/WEB-INF/jsps/user.jsp" />
+	</definition>
+	
+		
+</tiles-definitions>

@@ -14,7 +14,7 @@
           http://www.springframework.org/schema/tx 
           http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 
-	<context:component-scan base-package="com.sur.sms.gateway" />
+	<context:component-scan base-package="com.sur.sms.gateway.controller" />
 	<context:annotation-config />
 
 	<bean
@@ -69,5 +69,7 @@
     
     <bean id="employeeDao" autowire="autodetect"
           class="com.sur.sms.gateway.dao.EmployeeDao"/>
+          <bean id="employeeService" autowire="autodetect"
+          class="com.sur.sms.gateway.service.EmployeeService"/>
 
 </beans>

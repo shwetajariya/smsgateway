@@ -27,10 +27,48 @@ public class EmployeeController {
 	return new ModelAndView("employee", "command", employee);
     }
 
+    @RequestMapping(value = "/viewEmployee", method = RequestMethod.GET)
+    public String viewEmployee(ModelMap model) {
+	List<Employee> employeeList = employeeService.getEmployees();
+	model.addAttribute("employeeList", employeeList);
+	return "employeeList";
+	// return new ModelAndView("employeeList", "command", employeeList);
+    }
+
+    @RequestMapping(value = "/sendSms", method = RequestMethod.GET)
+    public ModelAndView sendSms() {
+	Employee employee = new Employee();
+	return new ModelAndView("sendSms", "command", employee);
+	// return new ModelAndView("employeeList", "command", employeeList);
+    }
+
     @RequestMapping(value = "/employee", method = RequestMethod.GET)
     public ModelAndView employee() {
 	Employee employee = new Employee();
 	return new ModelAndView("employee", "command", employee);
+    }
+
+    @RequestMapping(value = "/sendSmsAll", method = RequestMethod.GET)
+    public String sendSmsOne() {
+	System.out.println("==============sendSmsAll");
+	return "result";
+    }
+
+    @RequestMapping(value = "/sendSmsOne", method = RequestMethod.POST)
+    public String sendSmsOne(@ModelAttribute("SpringWeb") Employee employee,
+	    ModelMap model) {
+	try {
+	    System.out.println("sendSms == " + employee.getFirstNumber()
+		    + employee.getMiddleNumber() + employee.getLastNumber());
+	    model.addAttribute("status", Status.SUCCESS);
+	    model.addAttribute("message", Status.SUCCESS);
+	} catch (Exception ex) {
+	    model.addAttribute("status", Status.ERROR);
+	    model.addAttribute("message", ex.getMessage());
+	    model.addAttribute("exception", ex);
+	}
+
+	return "result";
     }
 
     @RequestMapping(value = "/employees", method = RequestMethod.GET)

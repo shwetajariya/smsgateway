@@ -20,7 +20,11 @@
 	
     <!-- Concrete page.-->
 	<definition name="employee" extends="template-main">
-		<put-attribute name="primary-content" value="/WEB-INF/views/employee.jsp" />
+		<put-attribute name="primary-content" value="/WEB-INF/views/EmployeeNew.jsp" />
+	</definition>
+	
+	<definition name="result" extends="template-main">
+		<put-attribute name="primary-content" value="/WEB-INF/views/result.jsp" />
 	</definition>
 	
 	<definition name="company_detail" extends="template-main">

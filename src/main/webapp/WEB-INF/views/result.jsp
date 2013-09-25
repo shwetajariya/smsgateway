@@ -1,11 +1,11 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
-    <title>Student</title>
+    <title>Employee</title>
 </head>
 <body>
 
-<h2>Submitted Student Information</h2>
+<h2>Submitted Information Successfully</h2>
    <table>
     <tr>
         <td>Status</td>

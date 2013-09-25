@@ -21,6 +21,12 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView indexPage() {
+	Employee employee = new Employee();
+	return new ModelAndView("employee", "command", employee);
+    }
+
     @RequestMapping(value = "/employee", method = RequestMethod.GET)
     public ModelAndView employee() {
 	Employee employee = new Employee();

@@ -27,15 +27,11 @@
 		<put-attribute name="primary-content" value="/WEB-INF/views/result.jsp" />
 	</definition>
 	
-	<definition name="company_detail" extends="template-main">
-		<put-attribute name="primary-content" value="/WEB-INF/jsps/company_detail.jsp" />
+	<definition name="home" extends="template-main">
+		<put-attribute name="primary-content" value="/WEB-INF/views/home.jsp" />
 	</definition>
 	
 	
-		
-	<definition name="user" extends="template-main">
-		<put-attribute name="primary-content" value="/WEB-INF/jsps/user.jsp" />
-	</definition>
 	
 		
 </tiles-definitions>
